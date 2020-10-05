@@ -43,9 +43,11 @@ public class Blaster : MonoBehaviour
         //prevent the player from doing anything while reloading
         if (m_isReloading) return;
 
-        /*if (m_FireAction.GetStateDown(m_Pose.inputSource) ||*/ if(Input.GetMouseButtonDown(0)) Fire();
+        if (m_FireAction != null && m_FireAction.GetStateDown(m_Pose.inputSource)) Fire();
+        else if(Input.GetMouseButtonDown(0)) Fire();
 
-        /*if (m_ReloadAction.GetStateDown(m_Pose.inputSource) ||*/ if(Input.GetKeyDown(KeyCode.R)) StartCoroutine(Reload());
+        if (m_ReloadAction != null && m_ReloadAction.GetStateDown(m_Pose.inputSource)) StartCoroutine(Reload());
+        else if(Input.GetKeyDown(KeyCode.R)) StartCoroutine(Reload());
     }
 
     private void Fire()

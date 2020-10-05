@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 [CreateAssetMenu]
 public class GameEvent : ScriptableObject
 {
-    private List<GameEventListener> listeners = new List<GameEventListener>();
+    [SerializeField] private  List<GameEventListener> listeners = new List<GameEventListener>();
 
     public void Raise()
     {
@@ -26,10 +26,7 @@ public class GameEvent : ScriptableObject
         listeners.Remove(listener);
     }
 
-    [Button("Raise")]
 
-    void FakeRaise()
-    {
-        Raise();
-    }
+    [Button("Raise")]
+    void FakeRaise() => Raise();
 }

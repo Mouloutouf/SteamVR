@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Features/Global/ManagersScene.unity
+    guid: 5df7a1daacbcd0b468ade9787a7d9313
+  - enabled: 1
+    path: Assets/Features/Networking/VRNetworkScene.unity
+    guid: 64857fae02d1c574f9debc88abb1cee4
+  - enabled: 1
+    path: Assets/Features/Networking/MobileNetworkScene.unity
+    guid: 97561d8788b42cc40b765fe867989a9a
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: c3bf848d02e3f4242a38078e364414f9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d0ce678d8d09470458cce4ee559babf6, type: 2}

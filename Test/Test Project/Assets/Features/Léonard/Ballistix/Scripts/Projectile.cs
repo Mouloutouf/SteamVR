@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.VR
@@ -8,6 +7,7 @@ namespace Gameplay.VR
     [RequireComponent(typeof(MeshRenderer))]
     [RequireComponent(typeof(SphereCollider))]
     [RequireComponent(typeof(Rigidbody))]
+
     public class Projectile : MonoBehaviour
     {
         [SerializeField] float m_Lifetime = 5f;

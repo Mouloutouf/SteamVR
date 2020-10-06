@@ -20,8 +20,8 @@ namespace CustomEditor
 
         static void OnSceneGUI(SceneView sceneView)
         {
-            Functions(sceneView);
-            DrawShape();
+            //Functions(sceneView);
+            //DrawShape();
         }
 
         private static void DrawShape()
@@ -37,7 +37,7 @@ namespace CustomEditor
 
         private static void Functions(SceneView sceneView)
         {
-            Handles.BeginGUI();
+            //Handles.BeginGUI();
             Rect rect = new Rect();// = new Rect(sceneView.camera.pixelWidth * 0.5f, -sceneView.camera.pixelHeight * 0.45f, sceneView.camera.pixelWidth, -sceneView.camera.pixelHeight);
             rect.position = new Vector2(sceneView.camera.pixelWidth * 0.5f, -sceneView.camera.pixelHeight * 0.45f);
             rect.size = new Vector2(sceneView.camera.pixelWidth, sceneView.camera.pixelHeight);

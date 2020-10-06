@@ -52,5 +52,4 @@ namespace Gameplay.VR
             gameObject.SetActive(false);
         }
     }
-
 }

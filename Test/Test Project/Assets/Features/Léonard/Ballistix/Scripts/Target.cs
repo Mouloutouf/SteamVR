@@ -2,66 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+namespace Gameplay.VR
 {
-    [SerializeField] Color m_FlashDamageColor = Color.white;
-    private MeshRenderer m_MeshRenderer = null;
-    private Color m_OriginalColor = Color.white;
-
-    private int m_MaxHealth = 2;
-    private int m_Health = 0;
-
-    void Awake()
+    public class Target : MonoBehaviour
     {
-        m_MeshRenderer = GetComponent<MeshRenderer>();
-        m_OriginalColor = m_MeshRenderer.material.color;
-    }
+        [SerializeField] Color m_FlashDamageColor = Color.white;
+        private MeshRenderer m_MeshRenderer = null;
+        private Color m_OriginalColor = Color.white;
 
-    void OnEnable()
-    {
-        ResetHealth();
-    }
+        private int m_MaxHealth = 2;
+        private int m_Health = 0;
 
-    void OnCollisionEnter(Collision collsion)
-    {
-        if (collsion.gameObject.CompareTag("Projectile")) Damage();
-    }
+        void Awake()
+        {
+            m_MeshRenderer = GetComponent<MeshRenderer>();
+            m_OriginalColor = m_MeshRenderer.material.color;
+        }
 
-    void Damage()
-    {
-        StopAllCoroutines();
-        StartCoroutine(Flash());
+        void OnEnable()
+        {
+            ResetHealth();
+        }
 
-        RemoveHealth();
-    }
+        void OnCollisionEnter(Collision collsion)
+        {
+            if (collsion.gameObject.CompareTag("Projectile")) Damage();
+        }
 
-    private IEnumerator Flash()
-    {
-        m_MeshRenderer.material.color = m_FlashDamageColor;
+        void Damage()
+        {
+            StopAllCoroutines();
+            StartCoroutine(Flash());
 
-        yield return new WaitForSeconds(0.1f);
+            RemoveHealth();
+        }
 
-        m_MeshRenderer.material.color = m_OriginalColor;
-    }
+        private IEnumerator Flash()
+        {
+            m_MeshRenderer.material.color = m_FlashDamageColor;
 
-    void RemoveHealth()
-    {
-        m_Health--;
-        CheckForDeath();
-    }
+            yield return new WaitForSeconds(0.1f);
 
-    void ResetHealth()
-    {
-        m_Health = m_MaxHealth;
-    }
+            m_MeshRenderer.material.color = m_OriginalColor;
+        }
 
-    void CheckForDeath()
-    {
-        if (m_Health <= 0) Kill();
-    }
+        void RemoveHealth()
+        {
+            m_Health--;
+            CheckForDeath();
+        }
 
-    void Kill()
-    {
-        gameObject.SetActive(false);
+        void ResetHealth()
+        {
+            m_Health = m_MaxHealth;
+        }
+
+        void CheckForDeath()
+        {
+            if (m_Health <= 0) Kill();
+        }
+
+        void Kill()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

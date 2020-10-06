@@ -5,79 +5,82 @@ using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 
-public class Blaster : MonoBehaviour
+namespace Gameplay.VR
 {
-    [Header("VR Input")]
-    [SerializeField] SteamVR_Action_Boolean m_FireAction = null;
-    [SerializeField] SteamVR_Action_Boolean m_ReloadAction = null;
-    [SerializeField] SteamVR_Behaviour_Pose m_Pose = null;
-
-    [Header("Settings")]
-    public int m_Force = 10;
-    [SerializeField] int m_MaxProjectileCount = 6;
-    [SerializeField] float m_ReloadTime = 1.5f;
-
-    [Header("References")]
-    public Transform m_Barrel = null;
-    [SerializeField] Text m_AmmoOutput = null;
-    [SerializeField] private GameObject m_ProjectilePrefab = null;
-    private bool m_isReloading = false;
-    private int m_FiredCount = 0;
-
-    private ProjectilePool m_ProjectilePool = null;
-
-    // Start is called before the first frame update
-    void Awake()
+    public class Blaster : MonoBehaviour
     {
-        m_Pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
-        m_ProjectilePool = new ProjectilePool(m_ProjectilePrefab, m_MaxProjectileCount);
-    }
+        [Header("VR Input")]
+        [SerializeField] SteamVR_Action_Boolean m_FireAction = null;
+        [SerializeField] SteamVR_Action_Boolean m_ReloadAction = null;
+        [SerializeField] SteamVR_Behaviour_Pose m_Pose = null;
 
-    void Start()
-    {
-        UpdateFireCount(0);
-    }
+        [Header("Settings")]
+        public int m_Force = 10;
+        [SerializeField] int m_MaxProjectileCount = 6;
+        [SerializeField] float m_ReloadTime = 1.5f;
 
-    void Update()
-    {
-        //prevent the player from doing anything while reloading
-        if (m_isReloading) return;
+        [Header("References")]
+        public Transform m_Barrel = null;
+        [SerializeField] Text m_AmmoOutput = null;
+        [SerializeField] private GameObject m_ProjectilePrefab = null;
+        private bool m_isReloading = false;
+        private int m_FiredCount = 0;
 
-        if (m_FireAction != null && m_FireAction.GetStateDown(m_Pose.inputSource)) Fire();
-        else if(Input.GetMouseButtonDown(0)) Fire();
+        private ProjectilePool m_ProjectilePool = null;
 
-        if (m_ReloadAction != null && m_ReloadAction.GetStateDown(m_Pose.inputSource)) StartCoroutine(Reload());
-        else if(Input.GetKeyDown(KeyCode.R)) StartCoroutine(Reload());
-    }
+        // Start is called before the first frame update
+        void Awake()
+        {
+            m_Pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+            m_ProjectilePool = new ProjectilePool(m_ProjectilePrefab, m_MaxProjectileCount);
+        }
 
-    private void Fire()
-    {
-        if (m_FiredCount >= m_MaxProjectileCount) return; 
-        
-        Projectile targetProjectile = m_ProjectilePool.m_Projectiles[m_FiredCount];
-        targetProjectile.Launch(this);
+        void Start()
+        {
+            UpdateFireCount(0);
+        }
 
-        UpdateFireCount(m_FiredCount + 1);
-    }
+        void Update()
+        {
+            //prevent the player from doing anything while reloading
+            if (m_isReloading) return;
 
-    private IEnumerator Reload()
-    {
-        if (m_FiredCount == 0) yield break;
+            if (m_FireAction != null && m_FireAction.GetStateDown(m_Pose.inputSource)) Fire();
+            else if (Input.GetMouseButtonDown(0)) Fire();
 
-        m_AmmoOutput.text = "-";
-        m_isReloading = true;
+            if (m_ReloadAction != null && m_ReloadAction.GetStateDown(m_Pose.inputSource)) StartCoroutine(Reload());
+            else if (Input.GetKeyDown(KeyCode.R)) StartCoroutine(Reload());
+        }
 
-        m_ProjectilePool.DisableAllProjectiles();
+        private void Fire()
+        {
+            if (m_FiredCount >= m_MaxProjectileCount) return;
 
-        yield return new WaitForSeconds(m_ReloadTime);
+            Projectile targetProjectile = m_ProjectilePool.m_Projectiles[m_FiredCount];
+            targetProjectile.Launch(this);
 
-        UpdateFireCount(0);
-        m_isReloading = false;
-    }
+            UpdateFireCount(m_FiredCount + 1);
+        }
 
-    void UpdateFireCount(int newValue)
-    {
-        m_FiredCount = newValue;
-        m_AmmoOutput.text = (m_MaxProjectileCount - m_FiredCount).ToString();
+        private IEnumerator Reload()
+        {
+            if (m_FiredCount == 0) yield break;
+
+            m_AmmoOutput.text = "-";
+            m_isReloading = true;
+
+            m_ProjectilePool.DisableAllProjectiles();
+
+            yield return new WaitForSeconds(m_ReloadTime);
+
+            UpdateFireCount(0);
+            m_isReloading = false;
+        }
+
+        void UpdateFireCount(int newValue)
+        {
+            m_FiredCount = newValue;
+            m_AmmoOutput.text = (m_MaxProjectileCount - m_FiredCount).ToString();
+        }
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class RotationData : MonoBehaviour
 {
     protected bool isRotating = true;
-    protected bool isResetting = false;
+    [SerializeField] protected bool isResetting = false;
     protected float rotationAngle = 90;
-    protected float rotationDuration = 3f;
-    protected float waitDuration = 1f;
+    protected float rotationDuration = 1f;
+    protected float waitDuration = .5f;
 }

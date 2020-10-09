@@ -8,7 +8,7 @@ namespace GamePlay
 {
     public class GameManager : MonoBehaviour
     {
-        public PhotonView photonView;
+        [SerializeField] private PhotonView photonView;
         private string currentScene;
 
         void Start()
@@ -17,6 +17,17 @@ namespace GamePlay
             currentScene = SceneManager.GetSceneByBuildIndex(1).name;
             Debug.Log(currentScene);
         }
+
+        public void Win()
+        {
+            Debug.Log("Win");
+        }
+
+        public void Loose()
+        {
+            Debug.Log("Loose");
+        }
+        
 
         public void LoadSceneAdditive(StringVariable scene)
         {
@@ -48,6 +59,7 @@ namespace GamePlay
         {
             photonView.RPC("UnloadCurrentScenePun", RpcTarget.All);
         }
+
         [PunRPC]
         void UnloadCurrentScenePun()
         {

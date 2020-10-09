@@ -85,6 +85,14 @@ PluginImporter:
       enabled: 1
       settings: {}
   - first:
+<<<<<<< HEAD
+=======
+      Standalone: Win64
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+>>>>>>> Quentin-Dev
       WebGL: WebGL
     second:
       enabled: 1

@@ -95,7 +95,11 @@ PluginImporter:
   - first:
       Standalone: Win64
     second:
+<<<<<<< HEAD
       enabled: 1
+=======
+      enabled: 0
+>>>>>>> Quentin-Dev
       settings:
         CPU: 
   - first:

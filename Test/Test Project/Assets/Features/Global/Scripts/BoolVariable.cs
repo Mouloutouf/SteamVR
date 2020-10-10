@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.Remoting.Messaging;
+using UnityEngine;
 
 namespace GamePlay
 {
@@ -8,5 +9,10 @@ namespace GamePlay
         public bool Value;
 
         public void SetValue(bool value) => Value = value;
+
+        public bool isTrue()
+        {
+            return Value;
+        }
     }
 }

@@ -8,9 +8,9 @@ public class CameraRotation : RotationData
 
     void Start()
     {
-        isResetting.SetValue(false);
         baseRotation = transform;
-        if (isRotating) StartCoroutine(ScanArea());
+        isResetting.SetValue(false);
+        if (isRotating.isTrue()) StartCoroutine(ScanArea());
     }
 
     // Loops a camera "Sweeping" motion over a set angle

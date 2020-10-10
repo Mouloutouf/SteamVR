@@ -10,4 +10,5 @@ public class DetectionData : MonoBehaviour
     [SerializeField] protected BoolVariable detectedPlayer;
     [SerializeField] protected FloatVariable detectionAngle;
     [SerializeField] protected FloatVariable detectionSpeed;
+    [SerializeField] protected FloatVariable detectionRange;
 }

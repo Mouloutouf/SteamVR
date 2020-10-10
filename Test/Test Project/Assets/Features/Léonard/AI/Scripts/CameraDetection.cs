@@ -5,46 +5,36 @@ using UnityEngine;
 
 public class CameraDetection : DetectionData
 {
-    private bool detectingPlayer, lockingPlayer;
-
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Player");
-        StartCoroutine(DetectPlayer());
+        StartCoroutine(DetectPlayer(detectionAngle.Value * 0.5f));
     }
 
-    private IEnumerator DetectPlayer()
+    private IEnumerator DetectPlayer(double detectionAngle)
     {
         while (true)
         {
-            Debug.DrawLine(transform.position, transform.forward * 5, Color.green);
+            float dist = Vector3.Distance(new Vector3(target.transform.position.x, 0, target.transform.position.z), new Vector3(transform.position.x, 0, transform.position.z));
+            print("Distance to other: " + dist);
 
-            Vector3 targetDir = target.transform.position - transform.position;
-            float angleDifference = Vector3.Angle(targetDir, transform.forward);
-
-            // returns true if the angle between the two is less than the detection angle
-            detectingPlayer = angleDifference <= detectionAngle.Value ? true : false;
-
-            while (detectingPlayer)
+            // check if player is within the camera's "depth" range
+            if (Vector3.Distance(new Vector3(target.transform.position.x, 0, target.transform.position.z), new Vector3(transform.position.x, 0, transform.position.z)) < detectionRange.Value)
             {
-                Debug.Log("I might've seen something");
+                Vector3 targetDir = target.transform.position - transform.position;
 
-                yield return new WaitForSeconds(detectionSpeed.Value);
+                float angleDifference = Vector3.Angle(targetDir, transform.forward);
 
-                float angleDifference2 = Vector3.Angle(targetDir, transform.forward);
-                
-                lockingPlayer = angleDifference2 <= detectionAngle.Value * 0.5f ? true : false; // divide the angle by half because it is replicated on either sides of transform.forward
+                // returns true if the angle between the two is less than the detection angle
+                bool detectedPlayer = angleDifference <= detectionAngle ? true : false;
 
-                if (lockingPlayer == true)
+                if (detectedPlayer)
                 {
-                    Debug.Log("Player has been spotted");
-                    break;
+                    Debug.Log("I can see the player");
+                    Debug.DrawLine(transform.position, target.transform.position, Color.blue);
                 }
-                else detectingPlayer = false;
             }
-
-            Debug.Log("No Target in Sight");
 
             yield return null;
         }

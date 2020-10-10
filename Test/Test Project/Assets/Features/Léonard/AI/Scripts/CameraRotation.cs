@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraRotation : RotationData
 {
-    private float startingPosition;
-
     void Start()
     {
         if (isRotating) StartCoroutine(ScanArea());
@@ -22,29 +20,29 @@ public class CameraRotation : RotationData
 
             if (isResetting)
             {
-                startPosition = rotationAngle; // move from right to left
-                change = -rotationAngle;
+                startPosition = rotationAngle.Value; // move from right to left
+                change = -rotationAngle.Value;
             }
 
             else
             {
                 startPosition = 0; // move from left to right
-                change = rotationAngle;
+                change = rotationAngle.Value;
             }
 
-            while (time <= rotationDuration)
+            while (time <= rotationDuration.Value)
             {
                 time += Time.deltaTime;
                 
-                var rotationAmount = TweenManager.LinearTween(time, startPosition, change, rotationDuration);
+                var rotationAmount = TweenManager.LinearTween(time, startPosition, change, rotationDuration.Value);
                 transform.rotation  = Quaternion.Euler(0, rotationAmount, 0);
 
                 yield return null;
             }
 
-            isResetting = !isResetting; // set the bool to its inverse value to start rotating to initial position
+            isResetting.Value = !isResetting.Value; // set the bool to its inverse value to start rotating to initial position
 
-            yield return new WaitForSeconds(waitDuration);
+            yield return new WaitForSeconds(waitDuration.Value);
         }
     }
 }

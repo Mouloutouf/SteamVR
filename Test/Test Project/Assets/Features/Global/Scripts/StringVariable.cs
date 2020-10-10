@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GamePlay
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Atom Variables/String Variable")]
     public class StringVariable : ScriptableObject
     {
         public string Value;

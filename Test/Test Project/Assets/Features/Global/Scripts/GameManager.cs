@@ -36,14 +36,17 @@ namespace GamePlay
             currentScene = scene.Value;
         }
 
+        public void LoadSceneAdditiveNetworkToOthers(StringVariable scene)
+        {
+            photonView.RPC("LoadSceneAdditiveNetwork", RpcTarget.Others, scene.Value);
+        }
         public void LoadSceneAdditiveNetworkToAll(StringVariable scene)
         {
-            photonView.RPC("LoadSceneAdditiveNetworkPun", RpcTarget.AllBufferedViaServer, scene.Value);
-            Debug.Log(scene.Value);
+            photonView.RPC("LoadSceneAdditiveNetwork", RpcTarget.AllBufferedViaServer, scene.Value);
         }
 
         [PunRPC]
-        private void LoadSceneAdditiveNetworkPun(string scene)
+        private void LoadSceneAdditiveNetwork(string scene)
         {
             SceneManager.LoadScene(scene, LoadSceneMode.Additive);
             currentScene = currentScene = scene;

@@ -2,7 +2,7 @@
 
 namespace GamePlay
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Atom Variables/Bool Variable")]
     public class BoolVariable : ScriptableObject
     {
         public bool Value;

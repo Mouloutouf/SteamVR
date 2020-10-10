@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GamePlay
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Atom Variables/Vector3 Variable")]
     public class Vector3Variable : ScriptableObject
     {
         public Vector3 Value;

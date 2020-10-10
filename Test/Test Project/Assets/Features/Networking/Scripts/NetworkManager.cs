@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
 
-namespace Network
+namespace GamePlay.Network
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {

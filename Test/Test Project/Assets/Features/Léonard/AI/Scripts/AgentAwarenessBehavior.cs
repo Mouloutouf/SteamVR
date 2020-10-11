@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Gameplay.VR
 {
     public class AgentAwarenessBehavior : AgentAwarenessData
     {
-        private bool detectingPlayer;
+        internal bool spottedPlayer;
         RaycastHit hitInfo;
 
         // Start is called before the first frame update
@@ -23,14 +24,17 @@ namespace Gameplay.VR
         {
             while (true)
             {
+                // DEBUG INFORMATION - REMOVE IN FINAL BUILD
                 Vector3 forward = transform.forward;
                 forward.y = 0;
                 Debug.DrawRay(transform.localPosition, forward * detectionRange.Value);
 
-                if (detectingPlayer)
+                if (spottedPlayer)
                 {
+                    detectingPlayer.Raise();
                     yield return new WaitForSeconds(detectionSpeed.Value);
 
+                    // if the player is still inside your cone of vision
                     if (Vector3.Angle(target.transform.localPosition - transform.localPosition, transform.forward) <= myDetectionAngle)
                     {
                         Debug.Log("I have detected the player");
@@ -38,6 +42,8 @@ namespace Gameplay.VR
                         detectedPlayer.Raise();
                         break;
                     }
+
+                    else spottedPlayer = false;
                 }
 
 
@@ -61,7 +67,7 @@ namespace Gameplay.VR
                         }
 
                         Debug.Log("Is that the player...?");
-                        detectingPlayer = true;
+                        spottedPlayer = true;
                     }
                 }
 

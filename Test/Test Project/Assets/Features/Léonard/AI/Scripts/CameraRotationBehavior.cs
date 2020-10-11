@@ -50,5 +50,16 @@ namespace Gameplay.VR
                 yield return new WaitForSeconds(waitDuration.Value);
             }
         }
+
+        // called when the player enters the camera's field of view
+        public void InterruptRotation()
+        {
+
+        }
+
+        public void ActivateCamera()
+        {
+
+        }
     }
 }

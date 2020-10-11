@@ -10,6 +10,7 @@ namespace Gameplay.VR
         [SerializeField] protected FloatVariable detectionAngle;
         [SerializeField] protected FloatVariable detectionSpeed;
         [SerializeField] protected FloatVariable detectionRange;
+        [SerializeField] protected GameEvent detectingPlayer;
         [SerializeField] protected GameEvent detectedPlayer;
         protected Light spotLight;
         protected GameObject target;

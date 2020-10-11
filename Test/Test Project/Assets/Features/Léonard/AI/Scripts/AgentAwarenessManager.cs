@@ -1,19 +1,34 @@
-﻿using System.Collections;
+﻿using Gameplay.VR;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // manages incoming detectingPlayer events
 public class AgentAwarenessManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] List<AgentAwarenessBehavior> entities = new List<AgentAwarenessBehavior>();
+    [SerializeField] List<CameraRotationBehavior> cameras = new List<CameraRotationBehavior>();
+
+    private void Start()
     {
-        
+        foreach (AgentAwarenessBehavior awareEntity in FindObjectsOfType<AgentAwarenessBehavior>()) entities.Add(awareEntity);
+        foreach (CameraRotationBehavior rotateCamera in FindObjectsOfType<CameraRotationBehavior>()) cameras.Add(rotateCamera);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GuardDetectingPlayer()
     {
-        
+
+    }
+
+    public void CameraDetectingPlayer()
+    {
+        // if a cacmera that had detected the pllayer raises the missing event
+        foreach (AgentAwarenessBehavior entity in entities)
+        {
+            if (entity.spottedPlayer == true)
+            {
+
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Gameplay.VR
         // Start is called before the first frame update
         void Start()
         {
-            target = GameObject.Find("Player"); // find a better way to do this
+            target = GameObject.FindGameObjectWithTag("Player"); // find a better way to do this
             spotLight = GetComponentInChildren<Light>();
             spotLight.spotAngle = detectionAngle.Value;
             myDetectionAngle = detectionAngle.Value * 0.5f;
@@ -31,7 +31,6 @@ namespace Gameplay.VR
 
                 if (spottedPlayer)
                 {
-                    detectingPlayer.Raise();
                     yield return new WaitForSeconds(detectionSpeed.Value);
 
                     // if the player is still inside your cone of vision
@@ -43,7 +42,11 @@ namespace Gameplay.VR
                         break;
                     }
 
-                    else spottedPlayer = false;
+                    else
+                    {
+                        Debug.Log("Must have been nothing");
+                        spottedPlayer = false;
+                    }
                 }
 
 

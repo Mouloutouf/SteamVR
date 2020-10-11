@@ -104,10 +104,10 @@ GameObject:
   - component: {fileID: 4934570630651365222}
   - component: {fileID: 4934570630651365217}
   - component: {fileID: 4934570630651365216}
-  - component: {fileID: 4934570630651365220}
-  - component: {fileID: 4934570630651365221}
+  - component: {fileID: 2541298793112749373}
+  - component: {fileID: 2880914844801917299}
   m_Layer: 0
-  m_Name: Enemy Cam_01
+  m_Name: Enemy Cam_Static
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 4934570630651365219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 497476417515096071}
   - {fileID: 1731146567}
@@ -191,24 +191,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4934570630651365220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934570630651365219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efa0e97a3acbca48b2e5ba76f3b437e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRotating: {fileID: 11400000, guid: 787e04124cd3ca741bafda8cb7ac0351, type: 2}
-  isResetting: {fileID: 11400000, guid: e51c2211d9ad4a146b4b7a444e1f3fb7, type: 2}
-  rotationAngle: {fileID: 11400000, guid: 1e9316545d2c7c24392e3660dbb4857f, type: 2}
-  rotationDuration: {fileID: 11400000, guid: c278888801ee918489bc04dfcfe0bf3e, type: 2}
-  waitDuration: {fileID: 11400000, guid: a7406952bea45194b99316eb064e2a29, type: 2}
---- !u!114 &4934570630651365221
+--- !u!114 &2541298793112749373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,12 +203,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ad4507a4e5214bb5a56ba6ca3e489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  isActive: {fileID: 11400000, guid: 920f5b2a493800340bedfb34b3ea5bd1, type: 2}
-  detectedPlayer: {fileID: 11400000, guid: d5fd204f9ed99d54a99fa09eb223f2e1, type: 2}
   detectionAngle: {fileID: 11400000, guid: e17088d8476ac8d4da6000fed7950852, type: 2}
   detectionSpeed: {fileID: 11400000, guid: c263eeec397b8db428613389579c38bc, type: 2}
   detectionRange: {fileID: 11400000, guid: caa66d2c6b407dd4984670713871eb2b, type: 2}
+  detectedPlayer: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
+--- !u!114 &2880914844801917299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934570630651365219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8154024958096445001
 GameObject:
   m_ObjectHideFlags: 0

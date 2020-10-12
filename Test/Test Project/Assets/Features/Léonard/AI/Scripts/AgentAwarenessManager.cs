@@ -15,12 +15,12 @@ public class AgentAwarenessManager : MonoBehaviour
         foreach (CameraRotationBehavior rotateCamera in FindObjectsOfType<CameraRotationBehavior>()) cameras.Add(rotateCamera);
     }
 
-    public void GuardDetectingPlayer()
+    public void GE_GuardDetectingPlayer()
     {
 
     }
 
-    public void CameraDetectingPlayer()
+    public void GE_CameraDetectingPlayer()
     {
         // if a cacmera that had detected the pllayer raises the missing event
         foreach (AgentAwarenessBehavior entity in entities)

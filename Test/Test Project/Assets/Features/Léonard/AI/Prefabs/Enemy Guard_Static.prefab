@@ -498,6 +498,7 @@ MonoBehaviour:
   detectionAngle: {fileID: 11400000, guid: c6a2da835c7baec499f281befc6b0a6f, type: 2}
   detectionSpeed: {fileID: 11400000, guid: 58408e47fb5380646837a1a0c45e6c4d, type: 2}
   detectionRange: {fileID: 11400000, guid: d17dc82f3469afb419444381d83bdb7e, type: 2}
+  detectingPlayer: {fileID: 0}
   detectedPlayer: {fileID: 11400000, guid: 0233c480edc7f2341bc85c3073960464, type: 2}
 --- !u!114 &361552108
 MonoBehaviour:
@@ -529,7 +530,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 361552108}
         m_TargetAssemblyTypeName: Gameplay.VR.GuardDetectionBehavior, Assembly-CSharp
-        m_MethodName: BulletTime
+        m_MethodName: GE_BulletTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

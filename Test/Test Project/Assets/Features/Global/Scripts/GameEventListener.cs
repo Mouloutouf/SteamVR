@@ -6,12 +6,18 @@ using UnityEngine.Events;
 public class GameEventListener : MonoBehaviour
 {
     public GameEvent Event;
+    //public GameEventPass Event2;
     public UnityEvent Response;
 
     public void OnEventRaised()
     {
         Response.Invoke();
     }
+
+    /*public void OnEventObjectRaised()
+    {
+        Event2.Invoke();
+    }*/
 
     private void OnEnable()
     {

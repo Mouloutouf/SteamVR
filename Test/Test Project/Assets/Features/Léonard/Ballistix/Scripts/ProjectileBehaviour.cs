@@ -11,22 +11,36 @@ namespace Gameplay.VR
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            SetInactive();
         }
 
         public void Launch()
         {
-            transform.localPosition = gunBarrel.localPosition;
-            transform.localRotation = gunBarrel.localRotation;
+            transform.localPosition = gunBarrel.transform.localPosition;
+            transform.localRotation = gunBarrel.transform.localRotation;
+
+            gameObject.SetActive(true);
 
             rb.AddRelativeForce(Vector3.forward * bulletForce.Value, ForceMode.Impulse);
 
-            StartCoroutine(Lifetime());
+            StartCoroutine(LifetimeDecay());
         }
 
-        private IEnumerator Lifetime()
+        private IEnumerator LifetimeDecay()
         {
-            new WaitForSeconds(bulletLifeTime.Value);
-            yield return null;
+            yield return new WaitForSeconds(bulletLifetime.Value);
+
+            returnedToPool.Raise();
+
+            SetInactive();
+        }
+
+        public void SetInactive()
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            gameObject.SetActive(false);
         }
     }
 }

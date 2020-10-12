@@ -341,51 +341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locked: 0
   markerActive: 1
---- !u!1 &606776792
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 606776793}
-  - component: {fileID: 606776794}
-  m_Layer: 0
-  m_Name: Pool Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &606776793
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606776792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1041850694}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &606776794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606776792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306d7faa6997adf4d9f14de73c3d6710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4099210063600416233, guid: e3f7da674a7a5c5498863e5b790c8d84, type: 3}
-  poolSize: {fileID: 11400000, guid: c4ed26cd489db5f4a9da49e8640b07f7, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +692,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1747428672}
-  - {fileID: 606776793}
   - {fileID: 1113957722}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -846,7 +800,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1041850694}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1113957723
 MonoBehaviour:
@@ -860,6 +814,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98a00bb7e0ba2243bb21d822bcd0b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  poolSize: {fileID: 0}
+  gunBarrelTransform: {fileID: 0}
 --- !u!114 &1113957724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,8 +834,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1113957723}
-        m_TargetAssemblyTypeName: GunManager, Assembly-CSharp
-        m_MethodName: Reload
+        m_TargetAssemblyTypeName: Gameplay.VR.GunManager, Assembly-CSharp
+        m_MethodName: GE_Reload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -905,8 +862,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1113957723}
-        m_TargetAssemblyTypeName: GunManager, Assembly-CSharp
-        m_MethodName: Fire
+        m_TargetAssemblyTypeName: Gameplay.VR.GunManager, Assembly-CSharp
+        m_MethodName: GE_Fire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1110,15 +1067,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireAction:
-    actionPath: /actions/default/in/Teleport
+    actionPath: 
     needsReinit: 0
   reloadAction:
-    actionPath: /actions/platformer/in/Jump
+    actionPath: 
     needsReinit: 0
   pose: {fileID: 0}
-  ammoCount: {fileID: 11400000, guid: bad88f3ea01e320479fef9cd37184e30, type: 2}
-  fireGun: {fileID: 11400000, guid: abc22df2289aebb47ad91168dcb55a3c, type: 2}
-  reloadGun: {fileID: 11400000, guid: 046f3a35fd028f941af460257ea9a8e5, type: 2}
+  ammoCount: {fileID: 0}
+  fireGun: {fileID: 0}
+  reloadGun: {fileID: 0}
 --- !u!1001 &1329744288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1404,7 +1361,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1747428673}
         m_TargetAssemblyTypeName: AgentAwarenessManager, Assembly-CSharp
-        m_MethodName: CameraDetectingPlayer
+        m_MethodName: GE_CameraDetectingPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1432,7 +1389,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1747428673}
         m_TargetAssemblyTypeName: AgentAwarenessManager, Assembly-CSharp
-        m_MethodName: GuardDetectingPlayer
+        m_MethodName: GE_GuardDetectingPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

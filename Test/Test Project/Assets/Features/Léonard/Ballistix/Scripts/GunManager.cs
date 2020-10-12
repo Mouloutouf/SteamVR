@@ -4,41 +4,75 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.VR
 {
     public class GunManager : MonoBehaviour
     {
-        [SerializeField] protected GameObject projectilePrefab;
-        [SerializeField] protected FloatVariable poolSize;
         protected ProjectilePool projectilePool = null;
-        protected int firedCount;
+
+        [SerializeField] protected GameObject projectilePrefab;
         [SerializeField] Transform gunBarrelTransform;
+
+        [SerializeField] protected FloatVariable poolSize;
+        [SerializeField] protected FloatVariable reloadTime;
+        [SerializeField] protected FloatVariable maxAmmunition;
+        [SerializeField] protected int firedCount;
+
+        [SerializeField] protected Text ammoText;
+
+        [SerializeField] protected bool isReloading;
 
         private void Awake()
         {
             projectilePool = new ProjectilePool(projectilePrefab, (int)poolSize.Value, gunBarrelTransform);
         }
 
-        public void Fire()
+        private void Start()
         {
-            if (firedCount >= poolSize.Value) return; // if you're firing more than what's in the pool, cancel the fire function
-            
-            else
+            UpdateFireCount(0);
+        }
+
+        public void GE_Fire()
+        {
+            if (!isReloading)
             {
-                projectilePool.projectiles[firedCount].Launch();
-                firedCount++; //increment so that the next time you fire it's the next bullet in the pool
+                if (firedCount >= maxAmmunition.Value) return; // if you're firing more than what's in the pool, cancel the fire function
+
+                else
+                {
+                    projectilePool.projectiles[firedCount].Launch();
+                    UpdateFireCount(++firedCount);
+                }
             }
         }
 
-        public void Reload()
+        public void GE_Reload()
         {
+            isReloading = true;
             StartCoroutine(ReloadGun());
         }
 
         private IEnumerator ReloadGun()
         {
-            yield return null;
+            if (firedCount == 0) yield break;
+
+            yield return new WaitForSeconds(reloadTime.Value);
+            isReloading = false;
+            firedCount = 0;
+
+            UpdateFireCount(0);
+        }
+
+        public void GE_ReturnedToPool()
+        {
+            //firedCount--;
+        }
+
+        void UpdateFireCount(float value)
+        {
+            ammoText.text = (maxAmmunition.Value - value).ToString();
         }
     }
 }

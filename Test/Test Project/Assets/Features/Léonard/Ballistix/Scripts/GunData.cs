@@ -11,8 +11,12 @@ namespace Gameplay.VR
         [SerializeField] protected SteamVR_Action_Boolean fireAction = null;
         [SerializeField] protected SteamVR_Action_Boolean reloadAction = null;
         [SerializeField] protected SteamVR_Behaviour_Pose pose = null;
-        [SerializeField] protected FloatVariable ammoCount;
+
         [SerializeField] protected GameEvent fireGun;
         [SerializeField] protected GameEvent reloadGun;
+
+        [SerializeField] protected FloatVariable ammoCount;
+
+        [SerializeField] protected bool isReloading;
     }
 }

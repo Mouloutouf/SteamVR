@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class GameEvent : ScriptableObject
@@ -11,12 +12,11 @@ public class GameEvent : ScriptableObject
 
     public void Raise()
     {
-
         for (int i = listeners.Count-1; i >=0; i--)
         {
             listeners[i].OnEventRaised();
         }
-    }
+    }    
 
     public void RegisterListener(GameEventListener listener)
     {
@@ -32,3 +32,29 @@ public class GameEvent : ScriptableObject
     [Button("Raise")]
     void FakeRaise() => Raise();
 }
+
+/*
+[System.Serializable]
+public class MyIntEvent<T> : UnityEvent<T> where T : MonoBehaviour
+{
+    [SerializeField] private List<GameEventListener> listeners = new List<GameEventListener>();
+
+    public void ObjectRaised(T Obj)
+    {
+        for (int i = listeners.Count - 1; i >= 0; i--)
+        {
+            listeners[i].OnEventObjectRaised();
+        }
+    }
+
+    public void RegisterListener(GameEventListener listener)
+    {
+        listeners.Add(listener);
+    }
+
+    public void UnRegisterListener(GameEventListener listener)
+    {
+        listeners.Remove(listener);
+    }
+}
+*/

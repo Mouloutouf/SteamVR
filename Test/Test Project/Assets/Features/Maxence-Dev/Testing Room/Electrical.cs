@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class Electrical : MonoBehaviour
+namespace GamePlay.Mobile
 {
-    
+    public class Electrical : MonoBehaviour
+    {
+        
+    }
 }

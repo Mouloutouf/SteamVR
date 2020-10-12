@@ -48,6 +48,7 @@ MonoBehaviour:
   - TransmitPlayerPosition
   - TransmitWin
   - LoadSceneAdditiveNetwork
+  - TransmitPlayerVRCam
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

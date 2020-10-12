@@ -199,6 +199,18 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5853653710154141292, guid: 1140364c7b184b249a56d4c561688cf6, type: 3}
+      propertyPath: _OnSwitchBlueCurrentPressed
+      value: 
+      objectReference: {fileID: 11400000, guid: d11429aec6aaf5942b1a209f7e91864d, type: 2}
+    - target: {fileID: 5853653710154141292, guid: 1140364c7b184b249a56d4c561688cf6, type: 3}
+      propertyPath: _OnSwitchRedCurrentPressed
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f68301de8e9db04f86ff20ba50bf121, type: 2}
+    - target: {fileID: 5853653710154141292, guid: 1140364c7b184b249a56d4c561688cf6, type: 3}
+      propertyPath: _OnSwitchGreenCurrentPressed
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e36447c37d9e3b419fbb5bb76f158ac, type: 2}
     - target: {fileID: 5853653710154141293, guid: 1140364c7b184b249a56d4c561688cf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -299,6 +311,10 @@ PrefabInstance:
     - target: {fileID: 6351601531236927055, guid: 95bfd0fdf2f36fe449aad396e86b8d81, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351601531236927055, guid: 95bfd0fdf2f36fe449aad396e86b8d81, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6351601532216172995, guid: 95bfd0fdf2f36fe449aad396e86b8d81, type: 3}
       propertyPath: viewIdField

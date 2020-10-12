@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 6612205466666728625}
   - component: {fileID: 4856741769793728233}
   - component: {fileID: 4142162742360259899}
+  - component: {fileID: 3319641448501935270}
+  - component: {fileID: 4473084497826735707}
+  - component: {fileID: 2023460079851762384}
   - component: {fileID: 5853653710154141291}
   m_Layer: 0
   m_Name: TransmitterManager
@@ -51,6 +54,9 @@ MonoBehaviour:
   playerPosition: {fileID: 11400000, guid: 9e4f0632de6be21439a4f60d9109eb98, type: 2}
   _OnWin: {fileID: 11400000, guid: 5cf0e607daee173468d2e8427e58aa4e, type: 2}
   _OnLoose: {fileID: 11400000, guid: ebfcc07c77117f44cbc91287ccfd4818, type: 2}
+  _OnSwitchBlueCurrentPressed: {fileID: 0}
+  _OnSwitchRedCurrentPressed: {fileID: 0}
+  _OnSwitchGreenCurrentPressed: {fileID: 0}
 --- !u!114 &6612205466666728625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +132,90 @@ MonoBehaviour:
       - m_Target: {fileID: 5853653710154141292}
         m_TargetAssemblyTypeName: GamePlay.Network.TransmitterManager, Assembly-CSharp
         m_MethodName: TransmitLooseToAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3319641448501935270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5853653710154141290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 9b49521904dfd48458e829dc216dda77, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5853653710154141292}
+        m_TargetAssemblyTypeName: GamePlay.Network.TransmitterManager, Assembly-CSharp
+        m_MethodName: TransmitBlueCurrentToAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4473084497826735707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5853653710154141290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e9dd85c432610564fbaa6f65aae8ab09, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5853653710154141292}
+        m_TargetAssemblyTypeName: GamePlay.Network.TransmitterManager, Assembly-CSharp
+        m_MethodName: TransmitGreenCurrentToAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2023460079851762384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5853653710154141290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8c734f9037d13f4488e6ead01345f923, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5853653710154141292}
+        m_TargetAssemblyTypeName: GamePlay.Network.TransmitterManager, Assembly-CSharp
+        m_MethodName: TransmitRedCurrentToAll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

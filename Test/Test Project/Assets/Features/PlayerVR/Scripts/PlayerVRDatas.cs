@@ -8,9 +8,7 @@ namespace GamePlay.VR
     {
         [SerializeField] private GameEvent _OnPlayermove;
         [SerializeField] private Vector3Variable playerPosition;
-
         private Vector3 positionReminder;
-
         private void Update()
         {
             if (positionReminder != transform.position)

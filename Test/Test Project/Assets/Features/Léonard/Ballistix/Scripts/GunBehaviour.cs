@@ -23,8 +23,8 @@ namespace Gameplay.VR
             if (ViveInput.GetPressDown(reloadHand, reloadButton)) fireGun.Raise();
             else if (Input.GetKeyDown(KeyCode.R)) reloadGun.Raise();
 
-            /*if (behaviorPose != null && fireActionBool.GetStateDown(behaviorPose.inputSource)) fireGun.Raise();
-            if (behaviorPose != null && reloadActionBool.GetStateDown(behaviorPose.inputSource)) reloadGun.Raise();;*/
+            if (behaviorPose != null && fireActionBool.GetStateDown(behaviorPose.inputSource)) fireGun.Raise();
+            if (behaviorPose != null && reloadActionBool.GetStateDown(behaviorPose.inputSource)) reloadGun.Raise();;
         }
     }
 }

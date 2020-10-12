@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-namespace Gameplay.VR
+namespace Gameplay.VR.Testing
 {
     public class TargetBehavior : MonoBehaviour
     {

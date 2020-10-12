@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 
-namespace Gameplay.VR
+namespace Gameplay.VR.Testing
 {
     public class Blaster : MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.VR
+namespace Gameplay.VR.test
 {
     public class Target : MonoBehaviour
     {

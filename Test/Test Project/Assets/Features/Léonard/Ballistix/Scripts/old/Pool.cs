@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.VR
+namespace Gameplay.VR.Testing
 {
     public class Pool
     {
@@ -39,7 +39,6 @@ namespace Gameplay.VR
         public void DisableAllProjectiles()
         {
             foreach (Projectile projectile in m_Projectiles) projectile.SetInactive();
-
         }
     }
 }

@@ -1,18 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Lifetime;
 using UnityEngine;
 
-public class ProjectileBehaviour : ProjectileData
+namespace Gameplay.VR
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ProjectileBehaviour : ProjectileData
     {
-        
-    }
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Launch()
+        {
+            transform.localPosition = gunBarrel.localPosition;
+            transform.localRotation = gunBarrel.localRotation;
+
+            rb.AddRelativeForce(Vector3.forward * bulletForce.Value, ForceMode.Impulse);
+
+            StartCoroutine(Lifetime());
+        }
+
+        private IEnumerator Lifetime()
+        {
+            new WaitForSeconds(bulletLifeTime.Value);
+            yield return null;
+        }
     }
 }

@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileData : MonoBehaviour
+namespace Gameplay.VR
 {
-    [SerializeField] FloatVariable bulletSpeed;
-    [SerializeField] FloatVariable bulletRange;
-    [SerializeField] FloatVariable ammoCount;
+    public class ProjectileData : MonoBehaviour
+    {
+        [SerializeField] protected FloatVariable ammoCount;
+        [SerializeField] internal Transform gunBarrel;
+        [SerializeField] protected Rigidbody rb;
+        [SerializeField] protected FloatVariable bulletForce;
+        [SerializeField] protected FloatVariable bulletLifeTime;
+    }
 }

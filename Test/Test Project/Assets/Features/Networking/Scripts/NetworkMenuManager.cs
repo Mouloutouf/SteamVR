@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GamePlay;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,13 +10,15 @@ public class NetworkMenuManager : MonoBehaviour
     
     public void SetupCompareToApplication()
     {
-        if (Application.platform == RuntimePlatform.WindowsEditor)
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
             joinRoom.SetActive(true);
+
         }
         else
         {
             createRoom.SetActive(true);
+
         }
     }
 }

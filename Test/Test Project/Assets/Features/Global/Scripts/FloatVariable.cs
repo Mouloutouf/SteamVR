@@ -2,7 +2,7 @@
 
 namespace GamePlay
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Atom Variables/Float Variable")]
     public class FloatVariable : ScriptableObject
     {
         public float Value;

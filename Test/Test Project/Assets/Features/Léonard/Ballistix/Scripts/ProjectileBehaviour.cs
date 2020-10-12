@@ -16,12 +16,12 @@ namespace Gameplay.VR
 
         public void Launch()
         {
-            transform.localPosition = gunBarrel.transform.localPosition;
-            transform.localRotation = gunBarrel.transform.localRotation;
+            transform.position = gunBarrel.transform.position;
+            transform.rotation = gunBarrel.transform.rotation;
 
             gameObject.SetActive(true);
 
-            rb.AddRelativeForce(Vector3.forward * bulletForce.Value, ForceMode.Impulse);
+            rb.AddRelativeForce(Vector3.forward * bulletForce.Value, ForceMode.VelocityChange);
 
             StartCoroutine(LifetimeDecay());
         }

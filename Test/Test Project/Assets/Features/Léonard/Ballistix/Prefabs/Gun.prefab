@@ -158,7 +158,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 64fb52b9cef1e57489877abcf376fe8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -501,17 +501,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe15e426fee12dd42b50234188aee722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAction:
-    actionPath: /actions/default/in/Teleport
+  fireActionBool:
+    actionPath: 
     needsReinit: 0
-  reloadAction:
-    actionPath: /actions/default/in/InteractUI
+  reloadActionBool:
+    actionPath: 
     needsReinit: 0
-  pose: {fileID: 0}
+  behaviorPose: {fileID: 0}
   fireGun: {fileID: 11400000, guid: abc22df2289aebb47ad91168dcb55a3c, type: 2}
   reloadGun: {fileID: 11400000, guid: 046f3a35fd028f941af460257ea9a8e5, type: 2}
   ammoCount: {fileID: 11400000, guid: bad88f3ea01e320479fef9cd37184e30, type: 2}
   isReloading: 0
+  fireButton: 0
+  fireHand: 0
+  reloadButton: 0
+  reloadHand: 0
 --- !u!33 &1419054089
 MeshFilter:
   m_ObjectHideFlags: 0

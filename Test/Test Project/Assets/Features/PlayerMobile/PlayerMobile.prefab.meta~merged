@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: da5c525f15c25374f8515ecf473ef66c
+PrefabImporter:
+=======
+<<<<<<< HEAD:Test/Test Project/Assets/Features/Mini Map.meta
+guid: 7e247d6dfecc6914ab2f9c7748404e61
+folderAsset: yes
+DefaultImporter:
+=======
+guid: da5c525f15c25374f8515ecf473ef66c
+PrefabImporter:
+>>>>>>> 69058e6... Mini Map Player Mobile Movements:Test/Test Project/Assets/Features/PlayerMobile/PlayerMobile.prefab.meta
+>>>>>>> 69058e6... Mini Map Player Mobile Movements
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

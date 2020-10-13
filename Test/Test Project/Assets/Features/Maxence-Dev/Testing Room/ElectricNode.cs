@@ -45,6 +45,7 @@ namespace GamePlay.Mobile
                 else element.gameObject.SetActive(!poweredPositive);
 
             onSwitchEvent.Raise();
+            // Debug.Log("Event : " + onSwitchEvent.name + " was raised !");
         }
 
         public void SwitchCurrent(float time)

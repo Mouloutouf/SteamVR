@@ -43,8 +43,7 @@ namespace GamePlay.Mobile
             foreach (ElectricElement element in negativeElements)
                 if (element.isNode) element.gameObject.GetComponent<ElectricNode>().CurrentAll(!poweredPositive);
                 else element.gameObject.SetActive(!poweredPositive);
-
-            onSwitchEvent.Raise();
+                
             // Debug.Log("Event : " + onSwitchEvent.name + " was raised !");
         }
 
@@ -115,8 +114,8 @@ namespace GamePlay.Mobile
 
                 timeDisplay.gameObject.SetActive(false);
                 switchButton.interactable = true;
-
-                SwitchCurrent();
+                
+                onSwitchEvent.Raise();
             }
 
             timeToWait -= Time.deltaTime;

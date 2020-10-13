@@ -10,7 +10,7 @@ public class NetworkMenuManager : MonoBehaviour
     
     public void SetupCompareToApplication()
     {
-        if (Application.platform == RuntimePlatform.WindowsPlayer)
+        if (Application.platform == RuntimePlatform.Android)
         {
             joinRoom.SetActive(true);
 

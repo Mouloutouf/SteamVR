@@ -6,17 +6,7 @@ using UnityEngine.UI;
 
 namespace GamePlay.Mobile
 {
-    [Serializable]
-    public class ElectricElement
-    {
-        public GameObject gameObject;
-
-        public bool isPowered { get => gameObject.activeSelf; }
-
-        public bool isNode;
-    }
-
-    public class ElectricNode : MonoBehaviour
+    public class ElectricNodeQuentin : MonoBehaviour
     {
         public List<ElectricElement> positiveElements;
 
@@ -43,9 +33,6 @@ namespace GamePlay.Mobile
             foreach (ElectricElement element in negativeElements)
                 if (element.isNode) element.gameObject.GetComponent<ElectricNode>().CurrentAll(!poweredPositive);
                 else element.gameObject.SetActive(!poweredPositive);
-
-            onSwitchEvent.Raise();
-            // Debug.Log("Event : " + onSwitchEvent.name + " was raised !");
         }
 
         public void SwitchCurrent(float time)
@@ -97,9 +84,6 @@ namespace GamePlay.Mobile
         {
             poweredPositive = false;
 
-            timeDisplay.gameObject.SetActive(false);
-
-            SwitchCurrent();
         }
 
         void Update()
@@ -117,6 +101,7 @@ namespace GamePlay.Mobile
                 switchButton.interactable = true;
 
                 SwitchCurrent();
+
             }
 
             timeToWait -= Time.deltaTime;

@@ -22,6 +22,8 @@ namespace GamePlay.Mobile
 
         public List<ElectricElement> negativeElements;
         
+        public GameEvent onSwitchEvent;
+
         private bool poweredPositive;
 
         private bool timedSwitchActivated;
@@ -41,6 +43,9 @@ namespace GamePlay.Mobile
             foreach (ElectricElement element in negativeElements)
                 if (element.isNode) element.gameObject.GetComponent<ElectricNode>().CurrentAll(!poweredPositive);
                 else element.gameObject.SetActive(!poweredPositive);
+
+            onSwitchEvent.Raise();
+            // Debug.Log("Event : " + onSwitchEvent.name + " was raised !");
         }
 
         public void SwitchCurrent(float time)

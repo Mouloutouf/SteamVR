@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Features/Global/Scenes/ManagersScene.unity
+    guid: 5df7a1daacbcd0b468ade9787a7d9313
+  - enabled: 1
+    path: Assets/Features/Global/Scenes/NetworkMenuScene.unity
+    guid: 64857fae02d1c574f9debc88abb1cee4
+  - enabled: 1
+    path: Assets/Features/Global/Scenes/MobileScene.unity
+    guid: 6dfc5fa25fd519b4db12660f7eff887b
+  - enabled: 1
+    path: "Assets/Features/L\xE9onard/GymRoomScene.unity"
+    guid: 0e0b676f556170643afde1a5fc2b1b4b
+  - enabled: 1
+    path: Assets/Features/Global/Scenes/VRScene.unity
+    guid: a154af9c3877b5b4dac64ee92887929c
+  - enabled: 1
+    path: Assets/Features/Global/Switch Scene.unity
+    guid: 0d5ec5241e926ec41996ec04cef3c2d8
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: c3bf848d02e3f4242a38078e364414f9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d0ce678d8d09470458cce4ee559babf6, type: 2}

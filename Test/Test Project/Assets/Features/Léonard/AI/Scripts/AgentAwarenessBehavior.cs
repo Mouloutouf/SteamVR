@@ -16,7 +16,16 @@ namespace Gameplay.VR
             spotLight = GetComponentInChildren<Light>();
             spotLight.spotAngle = detectionAngle.Value;
             myDetectionAngle = detectionAngle.Value * 0.5f;
-            StartCoroutine(DetectPlayer()); // divide by two because the check is doubled in size
+
+            isActive = baseState.Value;
+            if (isActive) StartCoroutine(DetectPlayer()); // divide by two because the check is doubled in size
+        }
+        
+        public void GE_SwitchElectricalCurrent()
+        {
+            isActive = !isActive;
+            if (isActive) StartCoroutine(DetectPlayer());
+            else StopCoroutine(DetectPlayer());
         }
 
         private IEnumerator DetectPlayer()

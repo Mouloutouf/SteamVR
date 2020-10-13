@@ -7,9 +7,16 @@ namespace Gameplay.VR
     {
         void Start()
         {
+            isResetting = false;
             baseRotation = transform;
-            isResetting.SetValue(false);
-            if (isRotating.isTrue()) StartCoroutine(ScanArea());
+            if (isRotating) StartCoroutine(ScanArea());
+        }
+
+        public void GE_SwitchElectricalCurrent()
+        {
+            isRotating = !isRotating;
+            if (isRotating) StartCoroutine(ScanArea());
+            else StopCoroutine(ScanArea());
         }
 
         // Loops a camera "Sweeping" motion over a set angle
@@ -22,7 +29,7 @@ namespace Gameplay.VR
                 float startPosition;
 
                 // move back to starting position
-                if (isResetting.isTrue())
+                if (isResetting)
                 {
                     startPosition = transform.localRotation.eulerAngles.y;
                     change = -rotationAngle.Value; // move from right to left
@@ -45,21 +52,10 @@ namespace Gameplay.VR
                     yield return null;
                 }
 
-                isResetting.SetValue(!isResetting.Value); // set the bool to its inverse value to start rotating to initial position
+                isResetting = !isResetting; // set the bool to its inverse value to start rotating to initial position
 
                 yield return new WaitForSeconds(waitDuration.Value);
             }
-        }
-
-        // called when the player enters the camera's field of view
-        public void InterruptRotation()
-        {
-
-        }
-
-        public void ActivateCamera()
-        {
-
-        }
+        }       
     }
 }

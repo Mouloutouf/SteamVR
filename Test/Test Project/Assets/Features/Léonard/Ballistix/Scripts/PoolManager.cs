@@ -12,7 +12,11 @@ namespace Gameplay.VR
         public ProjectilePool(GameObject projectilePrefab, int projectileCount, Transform TgunBarrel)
         {
             projectiles = Create<ProjectileBehaviour>(projectilePrefab, projectileCount);
-            foreach (ProjectileBehaviour item in projectiles) item.gunBarrel = TgunBarrel;
+            foreach (ProjectileBehaviour item in projectiles)
+            {
+                item.gunBarrel = TgunBarrel;
+                item.transform.parent = TgunBarrel.transform.parent;
+            }
         }
     }
 

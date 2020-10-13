@@ -16900,31 +16900,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0030042
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33326638
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.049863756
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5000001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000004470348
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.4999999
+      value: 0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_RootOrder
@@ -16940,7 +16940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8113419817041538107, guid: 0fcbf48ded30a6d46bcdf819218a2082, type: 3}
       propertyPath: m_LocalScale.x

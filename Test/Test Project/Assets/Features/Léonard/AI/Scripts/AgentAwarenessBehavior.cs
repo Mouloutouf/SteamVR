@@ -25,11 +25,17 @@ namespace Gameplay.VR
         {
             isActive = !isActive;
             if (isActive) StartCoroutine(DetectPlayer());
-            else StopCoroutine(DetectPlayer());
+            else
+            {
+                spotLight.intensity = 0;
+                StopCoroutine(DetectPlayer());
+            }
         }
 
         private IEnumerator DetectPlayer()
         {
+            spotLight.intensity = 2.5f;
+
             while (true)
             {
                 // DEBUG INFORMATION - REMOVE IN FINAL BUILD

@@ -14,7 +14,7 @@ public class AgentAwarenessManager : MonoBehaviour
 
     private void Start()
     {
-        //gameOver.enabled = false;
+        gameOver.enabled = false;
         foreach (AgentAwarenessBehavior awareEntity in FindObjectsOfType<AgentAwarenessBehavior>()) entities.Add(awareEntity);
         foreach (CameraRotationBehavior mobileCamera in FindObjectsOfType<CameraRotationBehavior>()) mobileCameras.Add(mobileCamera);
     }

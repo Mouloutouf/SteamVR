@@ -17,7 +17,7 @@ namespace Gameplay.VR
         public void Launch()
         {
             transform.position = gunBarrel.transform.position;
-            transform.rotation = gunBarrel.transform.rotation;
+            transform.localRotation = gunBarrel.transform.localRotation;
 
             gameObject.SetActive(true);
 

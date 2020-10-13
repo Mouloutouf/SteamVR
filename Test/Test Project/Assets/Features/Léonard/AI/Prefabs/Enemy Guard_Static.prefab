@@ -397,7 +397,6 @@ GameObject:
   - component: {fileID: 5949092652094936099}
   - component: {fileID: 7439293026788169118}
   - component: {fileID: 361552108}
-  - component: {fileID: 361552107}
   m_Layer: 0
   m_Name: Enemy Guard_Static
   m_TagString: Untagged
@@ -414,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 5949092652094936096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
   - {fileID: 5949092651190114442}
   m_Father: {fileID: 0}
@@ -495,11 +494,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ad4507a4e5214bb5a56ba6ca3e489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseState: {fileID: 11400000, guid: 920f5b2a493800340bedfb34b3ea5bd1, type: 2}
   detectionAngle: {fileID: 11400000, guid: c6a2da835c7baec499f281befc6b0a6f, type: 2}
   detectionSpeed: {fileID: 11400000, guid: 58408e47fb5380646837a1a0c45e6c4d, type: 2}
   detectionRange: {fileID: 11400000, guid: d17dc82f3469afb419444381d83bdb7e, type: 2}
-  detectingPlayer: {fileID: 0}
   detectedPlayer: {fileID: 11400000, guid: 0233c480edc7f2341bc85c3073960464, type: 2}
+  isActive: 0
 --- !u!114 &361552108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,31 +512,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c6864b9491a8c42a7cf8eb2cebfc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &361552107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949092652094936096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 0233c480edc7f2341bc85c3073960464, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 361552108}
-        m_TargetAssemblyTypeName: Gameplay.VR.GuardDetectionBehavior, Assembly-CSharp
-        m_MethodName: GE_BulletTime
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

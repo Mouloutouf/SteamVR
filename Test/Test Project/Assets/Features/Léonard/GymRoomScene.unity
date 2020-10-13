@@ -826,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8965750218299391675, guid: b67971cd8be95e648bd94b65f8426626, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -24.85
       objectReference: {fileID: 0}
     - target: {fileID: 8965750218299391675, guid: b67971cd8be95e648bd94b65f8426626, type: 3}
       propertyPath: m_LocalPosition.y
@@ -834,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8965750218299391675, guid: b67971cd8be95e648bd94b65f8426626, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.1
+      value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: 8965750218299391675, guid: b67971cd8be95e648bd94b65f8426626, type: 3}
       propertyPath: m_LocalRotation.x
@@ -964,7 +964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1041850694}
   m_Layer: 0
-  m_Name: Managers Container
+  m_Name: VR Managers Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,115 +1059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfc9ae4735ca5a143bb6c6a34034d791, type: 3}
---- !u!1 &1113957721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1113957722}
-  - component: {fileID: 1113957723}
-  - component: {fileID: 1113957725}
-  - component: {fileID: 1113957724}
-  m_Layer: 0
-  m_Name: GunManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1113957722
+--- !u!4 &1113957722 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+  m_PrefabInstance: {fileID: 4891017632641115887}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113957721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1041850694}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1113957723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113957721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98a00bb7e0ba2243bb21d822bcd0b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  gunBarrelTransform: {fileID: 0}
-  poolSize: {fileID: 0}
-  reloadTime: {fileID: 0}
-  maxAmmunition: {fileID: 0}
-  firedCount: 0
-  ammoText: {fileID: 0}
-  isReloading: 0
---- !u!114 &1113957724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113957721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 046f3a35fd028f941af460257ea9a8e5, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1113957723}
-        m_TargetAssemblyTypeName: Gameplay.VR.GunManager, Assembly-CSharp
-        m_MethodName: GE_Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1113957725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113957721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: abc22df2289aebb47ad91168dcb55a3c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1113957723}
-        m_TargetAssemblyTypeName: Gameplay.VR.GunManager, Assembly-CSharp
-        m_MethodName: GE_Fire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1268963718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,109 +1209,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1747428671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1747428672}
-  - component: {fileID: 1747428673}
-  - component: {fileID: 1747428675}
-  - component: {fileID: 1747428674}
-  m_Layer: 0
-  m_Name: Awareness Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1747428672
+--- !u!4 &1747428672 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+  m_PrefabInstance: {fileID: 5090898959350770276}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747428671}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1041850694}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1747428673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747428671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73bc380c7ef25e84ab6185c93128b4f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entities: []
-  cameras: []
---- !u!114 &1747428674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747428671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1747428673}
-        m_TargetAssemblyTypeName: AgentAwarenessManager, Assembly-CSharp
-        m_MethodName: GE_CameraDetectingPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1747428675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747428671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 0233c480edc7f2341bc85c3073960464, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1747428673}
-        m_TargetAssemblyTypeName: AgentAwarenessManager, Assembly-CSharp
-        m_MethodName: GE_GuardDetectingPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1762828621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,6 +1732,67 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &4891017632641115887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1041850694}
+    m_Modifications:
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162037, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162038, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_Name
+      value: GunManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891017633683162038, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 588f4829fbfd80548a4a1d997d1d000b, type: 3}
 --- !u!65 &4934570631746195136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2086,7 +1945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4934570631819566823}
   m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 13.15, y: 3.32, z: -1.2200007}
+  m_LocalPosition: {x: 11.76, y: 3.32, z: -0.19}
   m_LocalScale: {x: 0.7499997, y: 0.75000036, z: 0.74999994}
   m_Children:
   - {fileID: 497476416300765571}
@@ -2271,6 +2130,63 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &5090898959350770276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1041850694}
+    m_Modifications:
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259364, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090898957608259419, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
+      propertyPath: m_Name
+      value: Awareness Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab04fae2910a3a429fb1a95e5e60b0d, type: 3}
 --- !u!33 &5211349392194082828
 MeshFilter:
   m_ObjectHideFlags: 0

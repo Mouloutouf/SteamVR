@@ -2,33 +2,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // manages incoming detectingPlayer events
 public class AgentAwarenessManager : MonoBehaviour
 {
     [SerializeField] List<AgentAwarenessBehavior> entities = new List<AgentAwarenessBehavior>();
-    [SerializeField] List<CameraRotationBehavior> cameras = new List<CameraRotationBehavior>();
+    [SerializeField] List<CameraRotationBehavior> mobileCameras = new List<CameraRotationBehavior>();
+
+    [SerializeField] Text gameOver;
 
     private void Start()
     {
+        //gameOver.enabled = false;
         foreach (AgentAwarenessBehavior awareEntity in FindObjectsOfType<AgentAwarenessBehavior>()) entities.Add(awareEntity);
-        foreach (CameraRotationBehavior rotateCamera in FindObjectsOfType<CameraRotationBehavior>()) cameras.Add(rotateCamera);
+        foreach (CameraRotationBehavior mobileCamera in FindObjectsOfType<CameraRotationBehavior>()) mobileCameras.Add(mobileCamera);
     }
 
     public void GE_GuardDetectingPlayer()
     {
-
+        gameOver.enabled = true;
+        gameOver.text = "Game Over : \n Guard spotted you";
     }
 
     public void GE_CameraDetectingPlayer()
     {
-        // if a cacmera that had detected the pllayer raises the missing event
-        foreach (AgentAwarenessBehavior entity in entities)
-        {
-            if (entity.spottedPlayer == true)
-            {
-
-            }
-        }
+        gameOver.enabled = true;
+        gameOver.text = "Game Over : \n Camera spotted you";
     }
 }

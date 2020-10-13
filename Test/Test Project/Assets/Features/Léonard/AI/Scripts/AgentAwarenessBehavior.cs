@@ -63,10 +63,11 @@ namespace Gameplay.VR
                     }
                 }
 
-
                 // check if player is within the AI's "depth" range
                 else if (Vector3.Distance(new Vector3(target.transform.localPosition.x, 0, target.transform.localPosition.z), new Vector3(transform.localPosition.x, 0, transform.localPosition.z)) < detectionRange.Value)
                 {
+                    Debug.DrawLine(transform.position, target.transform.position, Color.green);
+
                     Vector3 targetDir = target.transform.localPosition - transform.localPosition;
 
                     float angleDifference = Vector3.Angle(targetDir, transform.forward);
@@ -76,15 +77,13 @@ namespace Gameplay.VR
 
                     if (playerInSight)
                     {
-                        // if there is something between the AI and the player
-                        if (Physics.Linecast(transform.localPosition, target.transform.localPosition, out hitInfo))
-                        {
-                            Debug.Log("I've hit " + hitInfo.collider.gameObject.name);
-                            yield return null;
-                        }
-
                         Debug.Log("Is that the player...?");
-                        spottedPlayer = true;
+
+                        // if there is something between the AI and the player
+                        if (Physics.SphereCast(transform.localPosition, 1f, target.transform.localPosition, out hitInfo)) 
+                            Debug.Log("I've hit " + hitInfo.collider.gameObject.name);
+
+                        else spottedPlayer = true;                        
                     }
                 }
 

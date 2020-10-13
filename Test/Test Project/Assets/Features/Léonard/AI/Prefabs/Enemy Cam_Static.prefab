@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 4934570630651365217}
   - component: {fileID: 4934570630651365216}
   - component: {fileID: 2541298793112749373}
-  - component: {fileID: 2880914844801917299}
   - component: {fileID: 3441036129799769868}
   m_Layer: 0
   m_Name: Enemy Cam_Static
@@ -204,28 +203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ad4507a4e5214bb5a56ba6ca3e489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseState: {fileID: 0}
+  baseState: {fileID: 11400000, guid: 920f5b2a493800340bedfb34b3ea5bd1, type: 2}
   detectionAngle: {fileID: 11400000, guid: e17088d8476ac8d4da6000fed7950852, type: 2}
   detectionSpeed: {fileID: 11400000, guid: c263eeec397b8db428613389579c38bc, type: 2}
   detectionRange: {fileID: 11400000, guid: caa66d2c6b407dd4984670713871eb2b, type: 2}
   detectedPlayer: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
   isActive: 0
---- !u!114 &2880914844801917299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934570630651365219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3441036129799769868
 MonoBehaviour:
   m_ObjectHideFlags: 0

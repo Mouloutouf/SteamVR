@@ -11,9 +11,10 @@ namespace Gameplay.VR
         [SerializeField] protected FloatVariable detectionSpeed;
         [SerializeField] protected FloatVariable detectionRange;
         [SerializeField] protected GameEvent detectedPlayer;
+        [SerializeField] protected LayerMask layerMask;
         [SerializeField] protected bool isActive;
         protected Light spotLight;
-        protected GameObject target;
+        [SerializeField] protected GameObject target;
         protected double myDetectionAngle; // the angle divided by two (interal value)
     }
 }

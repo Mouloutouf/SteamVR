@@ -6,7 +6,7 @@ namespace Gameplay.VR
 {
     public class AgentAwarenessBehavior : AgentAwarenessData
     {
-        internal bool spottedPlayer;
+        [SerializeField] internal bool spottedPlayer;
         RaycastHit hitInfo;
 
         // Start is called before the first frame update
@@ -41,17 +41,17 @@ namespace Gameplay.VR
                 // DEBUG INFORMATION - REMOVE IN FINAL BUILD
                 Vector3 forward = transform.forward;
                 forward.y = 0;
-                Debug.DrawRay(transform.localPosition, forward * detectionRange.Value);
+                Debug.DrawRay(transform.position, forward * detectionRange.Value);
 
                 if (spottedPlayer)
                 {
                     yield return new WaitForSeconds(detectionSpeed.Value);
 
                     // if the player is still inside your cone of vision
-                    if (Vector3.Angle(target.transform.localPosition - transform.localPosition, transform.forward) <= myDetectionAngle)
+                    if (Vector3.Angle(target.transform.position - transform.position, transform.forward) <= myDetectionAngle)
                     {
                         Debug.Log("I have detected the player");
-                        Debug.DrawLine(transform.localPosition, target.transform.localPosition, Color.green);
+                        Debug.DrawLine(transform.position, target.transform.position, Color.green);
                         detectedPlayer.Raise();
                         break;
                     }
@@ -64,11 +64,11 @@ namespace Gameplay.VR
                 }
 
                 // check if player is within the AI's "depth" range
-                else if (Vector3.Distance(new Vector3(target.transform.localPosition.x, 0, target.transform.localPosition.z), new Vector3(transform.localPosition.x, 0, transform.localPosition.z)) < detectionRange.Value)
+                else if (Vector3.Distance(new Vector3(target.transform.position.x, 0, target.transform.position.z), new Vector3(transform.position.x, 0, transform.position.z)) < detectionRange.Value)
                 {
                     Debug.DrawLine(transform.position, target.transform.position, Color.green);
 
-                    Vector3 targetDir = target.transform.localPosition - transform.localPosition;
+                    Vector3 targetDir = target.transform.position - transform.position;
 
                     float angleDifference = Vector3.Angle(targetDir, transform.forward);
 
@@ -77,13 +77,16 @@ namespace Gameplay.VR
 
                     if (playerInSight)
                     {
-                        Debug.Log("Is that the player...?");
+                        Debug.Log("Is that the player ");
 
                         // if there is something between the AI and the player
-                        if (Physics.SphereCast(transform.localPosition, 1f, target.transform.localPosition, out hitInfo)) 
+                        if (Physics.Linecast(transform.position, target.transform.position, out hitInfo, layerMask))
+                        {
                             Debug.Log("I've hit " + hitInfo.collider.gameObject.name);
+                            spottedPlayer = true;
+                        }
 
-                        else spottedPlayer = true;                        
+                        else Debug.Log("hitting nothing");
                     }
                 }
 

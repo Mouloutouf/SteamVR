@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 709707501}
   - component: {fileID: 709707500}
   - component: {fileID: 709707498}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,6 +1502,9 @@ MonoBehaviour:
   detectionSpeed: {fileID: 11400000, guid: c263eeec397b8db428613389579c38bc, type: 2}
   detectionRange: {fileID: 11400000, guid: caa66d2c6b407dd4984670713871eb2b, type: 2}
   detectedPlayer: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   isActive: 0
 --- !u!114 &2541298794264239289
 MonoBehaviour:
@@ -1520,6 +1523,9 @@ MonoBehaviour:
   detectionSpeed: {fileID: 11400000, guid: c263eeec397b8db428613389579c38bc, type: 2}
   detectionRange: {fileID: 11400000, guid: caa66d2c6b407dd4984670713871eb2b, type: 2}
   detectedPlayer: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   isActive: 0
 --- !u!114 &2880914845332452845
 MonoBehaviour:
@@ -1528,22 +1534,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4934570632272483325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2880914846054070519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934570631819566823}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b050f1f874b0d5498a0b48727c3f05e, type: 3}
@@ -1904,6 +1894,9 @@ MonoBehaviour:
   detectionSpeed: {fileID: 11400000, guid: c263eeec397b8db428613389579c38bc, type: 2}
   detectionRange: {fileID: 11400000, guid: caa66d2c6b407dd4984670713871eb2b, type: 2}
   detectedPlayer: {fileID: 11400000, guid: 5463d04b5e00d7245b7af4a6fc7f15d1, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   isActive: 0
 --- !u!33 &4934570631746195142
 MeshFilter:
@@ -2020,7 +2013,6 @@ GameObject:
   - component: {fileID: 4934570631819566821}
   - component: {fileID: 4934570631819566820}
   - component: {fileID: 2541298794264239289}
-  - component: {fileID: 2880914846054070519}
   - component: {fileID: 3441036128921245320}
   - component: {fileID: 1268963718}
   m_Layer: 0

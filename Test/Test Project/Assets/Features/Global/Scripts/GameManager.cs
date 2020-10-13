@@ -18,14 +18,21 @@ namespace GamePlay
             Debug.Log(currentScene);
         }
 
-        public void Win()
-        {
-            Debug.Log("Win");
-        }
+        public void Win()=> SceneManager.LoadScene("ManagersScene");
 
         public void Loose()
         {
-            Debug.Log("Loose");
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                SceneManager.UnloadSceneAsync("Lvl_0 Mobile");
+                SceneManager.LoadScene("Lvl_0 Mobile", LoadSceneMode.Additive);
+
+            }
+            else
+            {
+                SceneManager.UnloadSceneAsync("Lvl_0 VR");
+                SceneManager.LoadScene("Lvl_0 VR", LoadSceneMode.Additive);
+            }
         }
         
 

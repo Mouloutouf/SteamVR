@@ -24,6 +24,9 @@ namespace Gameplay.VR
 
         [SerializeField] protected bool isReloading;
 
+        RaycastHit hitInfo;
+        LayerMask layerMask;
+
         private void Awake()
         {
             projectilePool = new ProjectilePool(projectilePrefab, (int)poolSize.Value, gunBarrelTransform);

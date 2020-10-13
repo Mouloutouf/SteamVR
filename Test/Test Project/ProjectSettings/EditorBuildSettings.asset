@@ -18,11 +18,20 @@ EditorBuildSettings:
     path: "Assets/Features/L\xE9onard/GymRoomScene.unity"
     guid: 0e0b676f556170643afde1a5fc2b1b4b
   - enabled: 1
+    path: Assets/Scenes/Eliot/Lvl_0 Mobile.unity
+    guid: a5f6d419fa638c14a867c5a280c6c05c
+  - enabled: 1
+    path: Assets/Scenes/Eliot/Lvl_0 VR.unity
+    guid: d196969beb232e846a29072602af1a7f
+  - enabled: 1
     path: Assets/Features/Global/Scenes/VRScene.unity
     guid: a154af9c3877b5b4dac64ee92887929c
   - enabled: 1
     path: Assets/Features/Global/Switch Scene.unity
     guid: 0d5ec5241e926ec41996ec04cef3c2d8
+  - enabled: 1
+    path: Assets/Features/Maxence-Dev/Testing Room/TestScene.unity
+    guid: 8c025363e63e4a844b6c0cd95ef7c217
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: c3bf848d02e3f4242a38078e364414f9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d0ce678d8d09470458cce4ee559babf6, type: 2}

@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Eliot/Lvl_0 VR.unity
     guid: d196969beb232e846a29072602af1a7f
   - enabled: 1
+    path: "Assets/Features/L\xE9onard/F00ked 1.unity"
+    guid: 7a312b85c3b9a9d4faa928b9427dbe7a
+  - enabled: 1
     path: Assets/Features/Global/Scenes/VRScene.unity
     guid: a154af9c3877b5b4dac64ee92887929c
   - enabled: 1

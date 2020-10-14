@@ -30,8 +30,8 @@ namespace GamePlay
             }
             else
             {
-                SceneManager.UnloadSceneAsync("F00ked");
-                SceneManager.LoadScene("F00ked", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync("F00ked 1");
+                SceneManager.LoadScene("F00ked 1", LoadSceneMode.Additive);
             }
         }
         

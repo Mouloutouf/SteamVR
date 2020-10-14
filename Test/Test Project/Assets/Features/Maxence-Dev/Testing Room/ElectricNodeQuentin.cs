@@ -83,6 +83,7 @@ namespace GamePlay.Mobile
         void Start()
         {
             poweredPositive = false;
+            SwitchCurrent();
 
         }
 

@@ -30,8 +30,8 @@ namespace GamePlay
             }
             else
             {
-                SceneManager.UnloadSceneAsync("F00ked 1");
-                SceneManager.LoadScene("F00ked 1", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync("Lvl_0 f00KED Le Dernier Quash");
+                SceneManager.LoadScene("Lvl_0 f00KED Le Dernier Quash", LoadSceneMode.Additive);
             }
         }
         

@@ -50,7 +50,7 @@ namespace Gameplay.VR
                     // if the player is still inside your cone of vision
                     if (Vector3.Angle(target.transform.position - transform.position, transform.forward) <= myDetectionAngle)
                     {
-                        Debug.Log("I have detected the player");
+                        Debug.Log(gameObject.name + " has detected the player");
                         Debug.DrawLine(transform.position, target.transform.position, Color.green);
                         detectedPlayer.Raise();
                         break;
@@ -82,11 +82,11 @@ namespace Gameplay.VR
                         // if there is something between the AI and the player
                         if (Physics.Linecast(transform.position, target.transform.position, out hitInfo, layerMask))
                         {
-                            Debug.Log("I've hit " + hitInfo.collider.gameObject.name);
+                            Debug.Log(gameObject.name + " hit " + hitInfo.collider.gameObject.name);
                             spottedPlayer = true;
                         }
 
-                        else Debug.Log("hitting nothing");
+                        else Debug.Log(gameObject.name + " is hitting nothing");;
                     }
                 }
 

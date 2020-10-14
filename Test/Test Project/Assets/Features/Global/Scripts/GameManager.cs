@@ -30,8 +30,8 @@ namespace GamePlay
             }
             else
             {
-                SceneManager.UnloadSceneAsync("Lvl_0 VR");
-                SceneManager.LoadScene("Lvl_0 VR", LoadSceneMode.Additive);
+                SceneManager.UnloadSceneAsync("F00ked");
+                SceneManager.LoadScene("F00ked", LoadSceneMode.Additive);
             }
         }
         

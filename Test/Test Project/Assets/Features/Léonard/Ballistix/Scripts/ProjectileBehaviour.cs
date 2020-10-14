@@ -41,5 +41,11 @@ namespace Gameplay.VR
 
             gameObject.SetActive(false);
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemy")) collision.collider.gameObject.SendMessage("Shot");
+            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Environement")) SetInactive();
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Gameplay.VR
             isActive = baseState.Value;
             if (isActive) StartCoroutine(DetectPlayer()); // divide by two because the check is doubled in size
         }
-        
+
         public void GE_SwitchElectricalCurrent()
         {
             isActive = !isActive;
@@ -28,7 +28,7 @@ namespace Gameplay.VR
             else
             {
                 spotLight.intensity = 0;
-                StopCoroutine(DetectPlayer());
+                StopAllCoroutines();
             }
         }
 

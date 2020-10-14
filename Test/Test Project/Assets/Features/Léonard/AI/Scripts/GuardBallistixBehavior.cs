@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardBallistixBehavior : GuardBallistixData
+namespace Gameplay.VR
 {
-    public GuardBallistixManager manager;
-    
-    private void Shot()
+    public class GuardBallistixBehavior : GuardBallistixData
     {
-        manager.deadGuard = this;
+        public GuardBallistixManager manager;
 
-        Debug.Log("I've been shot");
-        guardShot.Raise();
-        gameObject.SetActive(false);
-        //transform.Rotate(new Vector3(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+        private void Shot()
+        {
+            manager.deadGuard = this.gameObject;
+
+            Debug.Log("I've been shot");
+            guardShot.Raise();
+            gameObject.SetActive(false);
+            //transform.Rotate(new Vector3(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+        }
     }
 }

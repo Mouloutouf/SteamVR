@@ -10,7 +10,7 @@ namespace Gameplay.VR
 
         private void Shot()
         {
-            manager.deadGuard = this;
+            manager.deadGuard = this.gameObject;
 
             Debug.Log("I've been shot");
             guardShot.Raise();

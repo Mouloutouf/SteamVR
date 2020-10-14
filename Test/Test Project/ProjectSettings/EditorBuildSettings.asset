@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Features/Global/Switch Scene.unity
     guid: 0d5ec5241e926ec41996ec04cef3c2d8
   - enabled: 1
-    path: Assets/Features/Maxence-Dev/Testing Room/TestScene.unity
+    path: Assets/Features/Maxence/Features/Electrical/_Scenes/ElectricSystemTestMobileScene.unity
     guid: 8c025363e63e4a844b6c0cd95ef7c217
   - enabled: 1
     path: "Assets/Features/L\xE9onard/F00ked.unity"

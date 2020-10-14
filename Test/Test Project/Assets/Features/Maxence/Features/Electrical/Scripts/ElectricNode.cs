@@ -10,9 +10,7 @@ namespace GamePlay.Mobile
     public class ElectricElement
     {
         public GameObject gameObject;
-
-        public bool isPowered { get => gameObject.activeSelf; }
-
+        
         public bool isNode;
     }
 

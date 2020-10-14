@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElectricalEvent : GameEvent
+public class Element : ScriptableObject
 {
     
 }

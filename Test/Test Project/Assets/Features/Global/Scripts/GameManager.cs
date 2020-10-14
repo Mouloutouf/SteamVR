@@ -9,7 +9,9 @@ namespace GamePlay
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private PhotonView photonView;
+        [SerializeField] private GameObjectVariable player;
         private string currentScene;
+        private bool canLoad = true;
 
         void Start()
         {
@@ -21,18 +23,32 @@ namespace GamePlay
         public void Win()=> SceneManager.LoadScene("ManagersScene");
 
         public void Loose()
-        {
-            if (Application.platform == RuntimePlatform.Android)
+        { 
+            if (canLoad)
             {
-                SceneManager.UnloadSceneAsync("Lvl_0 Mobile");
-                SceneManager.LoadScene("Lvl_0 Mobile", LoadSceneMode.Additive);
+                canLoad = false;
+                Destroy(player.Value);
+                if (Application.platform == RuntimePlatform.Android)
+                {
+                    SceneManager.UnloadSceneAsync("Lvl_0 Mobile");
+                    SceneManager.LoadScene("Lvl_0 Mobile", LoadSceneMode.Additive);
 
+                }
+                else
+                {
+                    SceneManager.UnloadSceneAsync("Lvl_0 f00KED Le Dernier Quash");
+                    SceneManager.LoadScene("Lvl_0 f00KED Le Dernier Quash", LoadSceneMode.Additive);
+                }
+                
+                StartCoroutine(WaitCanLoad());
             }
-            else
-            {
-                SceneManager.UnloadSceneAsync("Lvl_0 f00KED Le Dernier Quash");
-                SceneManager.LoadScene("Lvl_0 f00KED Le Dernier Quash", LoadSceneMode.Additive);
-            }
+           
+        }
+
+        IEnumerator WaitCanLoad()
+        {
+            yield return new WaitForSeconds(1);
+            canLoad = true;
         }
         
 

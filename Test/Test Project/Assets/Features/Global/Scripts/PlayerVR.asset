@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcaf9d891360ec3468c39ee9e180bb93, type: 3}
-  m_Name: maxAmmunition
+  m_Script: {fileID: 11500000, guid: e6b2718b0d945254cad77f98cf7396a9, type: 3}
+  m_Name: PlayerVR
   m_EditorClassIdentifier: 
-  Value: 100
+  Value: {fileID: 0}

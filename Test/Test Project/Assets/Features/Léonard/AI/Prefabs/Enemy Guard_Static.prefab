@@ -333,8 +333,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.018101104, b: 0, a: 1}
-  m_Intensity: 3
+  m_Color: {r: 1, g: 0.6831585, b: 0, a: 1}
+  m_Intensity: 1.5
   m_Range: 40
   m_SpotAngle: 115
   m_InnerSpotAngle: 1
@@ -368,7 +368,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -496,10 +496,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseState: {fileID: 11400000, guid: 920f5b2a493800340bedfb34b3ea5bd1, type: 2}
   detectionAngle: {fileID: 11400000, guid: c6a2da835c7baec499f281befc6b0a6f, type: 2}
-  detectionSpeed: {fileID: 11400000, guid: 58408e47fb5380646837a1a0c45e6c4d, type: 2}
+  detectionSpeed: {fileID: 11400000, guid: c263eeec397b8db428613389579c38bc, type: 2}
   detectionRange: {fileID: 11400000, guid: d17dc82f3469afb419444381d83bdb7e, type: 2}
-  detectedPlayer: {fileID: 11400000, guid: 0233c480edc7f2341bc85c3073960464, type: 2}
+  detectedPlayer: {fileID: 11400000, guid: 7cb876636579b79409c0e7abbbb74a25, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   isActive: 0
+  target: {fileID: 0}
+  spottedPlayer: 0
 --- !u!114 &361552108
 MonoBehaviour:
   m_ObjectHideFlags: 0

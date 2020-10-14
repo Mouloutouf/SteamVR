@@ -12,7 +12,7 @@ namespace Gameplay.VR
         // Start is called before the first frame update
         void Start()
         {
-            target = GameObject.FindGameObjectWithTag("Player"); // find a better way to do this
+            target = GameObject.Find("HeadCollider"); // find a better way to do this
             spotLight = GetComponentInChildren<Light>();
             spotLight.spotAngle = detectionAngle.Value;
             myDetectionAngle = detectionAngle.Value * 0.5f;

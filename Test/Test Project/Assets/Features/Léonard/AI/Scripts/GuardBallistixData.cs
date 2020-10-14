@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardBallistixData : MonoBehaviour
+namespace Gameplay.VR
 {
-    [SerializeField] protected GameEvent guardShot;
+    public class GuardBallistixData : MonoBehaviour
+    {
+        [SerializeField] protected GameEvent guardShot;
+    }
 }

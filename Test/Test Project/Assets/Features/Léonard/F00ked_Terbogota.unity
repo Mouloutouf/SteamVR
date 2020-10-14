@@ -2229,7 +2229,7 @@ PrefabInstance:
     - target: {fileID: 6633453427938295240, guid: 2b6d5e140d0da294c80ca629ea51dd4c, type: 3}
       propertyPath: deadGuard
       value: 
-      objectReference: {fileID: 165177622}
+      objectReference: {fileID: 2065340441}
     - target: {fileID: 6633453427938295241, guid: 2b6d5e140d0da294c80ca629ea51dd4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
